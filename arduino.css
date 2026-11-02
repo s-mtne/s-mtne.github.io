@@ -11,3 +11,26 @@
 @media(prefers-reduced-motion:reduce){.servo-arm,.door-shape{transition:none}}
 
 
+
+/* Animations du schéma SVG actuel : bras du SG90 et vantail de la porte. */
+.arduino-schematic .servo-arm-moving{
+  transform-box:view-box;
+  transform-origin:617px 275px;
+  transform:rotate(0deg);
+  transition:transform .8s ease;
+}
+.arduino-schematic.is-open .servo-arm-moving{transform:rotate(90deg)}
+.arduino-schematic .door-leaf{
+  transform-box:view-box;
+  transform-origin:674px 169px;
+  transform:scaleX(1);
+  transition:transform .8s ease;
+}
+.arduino-schematic.is-open .door-leaf{transform:scaleX(.22)}
+.arduino-schematic .lock-status-light circle{transition:fill .25s ease}
+.arduino-schematic.is-open .lock-status-light circle{fill:#45d88c}
+@media(prefers-reduced-motion:reduce){
+  .arduino-schematic .servo-arm-moving,
+  .arduino-schematic .door-leaf,
+  .arduino-schematic .lock-status-light circle{transition:none}
+}
